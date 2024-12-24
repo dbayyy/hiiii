@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #a8edea, #fed6e3); /* Pastel biru dan merah muda */
+            color: #333; /* Warna teks yang lebih gelap untuk kontras */
+            margin: 0;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Scroll lembut */
+            height: 100%;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+        body {
+            padding: 20px; /* Padding di sekitar konten */
+            overflow-y: auto; /* Memastikan halaman dapat di-scroll */
+        }
+        .card {
+            background-color: rgba(255, 230, 254, 0.8); /* Latar belakang semi-transparan */
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            z-index: 10;
+            margin: 40px auto; /* Ruang vertikal antar elemen */
+            box-sizing: border-box;
+            animation: slideUp 1s ease-out; /* Tambahkan animasi muncul */
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px); /* Mulai dari bawah */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Bergerak ke posisi normal */
+            }
+        }
+        .card h1 {
+            font-size: 36px;  
+            margin-bottom: 10px;
+            font-family: 'Lobster', cursive;
+            color: #338fbd; /* Warna ungu pastel */
+        }
+        .card p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #267d9a; /* Abu-abu untuk teks */
+        }
+        .card .button {
+            padding: 10px 20px;
+            background-color: #3784b3; /* Warna biru pastel */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            outline: none;
+        }
+        .card .button:hover {
+            background-color: #a8edea; /* Warna pastel biru muda */
+            color: #333;
+        }
+        .birthday-image {
+            margin-top: 0px;
+            width: 100%;
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #fed6e3; /* Border merah muda pastel */
+        }
+
+        /* Responsif untuk perangkat kecil */
+        @media (max-width: 600px) {
+            .card h1 {
+                font-size: 28px; /* Mengubah ukuran judul pada perangkat kecil */
+            }
+            .card p {
+                font-size: 16px; /* Menyesuaikan ukuran teks pada perangkat kecil */
+            }
+            .card .button {
+                font-size: 14px; /* Menyesuaikan ukuran tombol pada perangkat kecil */
+            }
+            .birthday-image {
+                max-width: 100%; /* Membuat gambar lebih fleksibel di perangkat kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="sempurna.mp3" loop autoplay></audio>
+
+    <div class="card">
+        <h1>Hi Cantik!</h1>
+        <img src="ucapan.jpg" class="birthday-image" alt="Birthday Cake">
+        <p>Hi Win, jujur aku suka sama kamu... aku ngerasa nyaman deket kamu,
+            aku suka semua tentangmu, makasi ya udah lahir di dunia hihi, makasi juga buat mamakmu
+            udah ngelahirin bidadari secantik ini hihi,,
+            aku rasa kita kenal udah lumayan lama ya, bisa gak klo kita lebih dari sekedar teman, 
+            kamu mau gak kalo kita pacaran?? klo mau dipikir dulu gpp ko ni aku isiin tombol dibawah, 
+            ntr kalo dah ada jawabannya ss ya kirim ke aku hihi</p>
+        <p>Astungkara mau</p>
+        
+        <a href="hasil1.html">
+            <button class="button">Mau</button>
+        </a>
+        <a href="hasil2.html">
+            <button class="button">Engga</button>
+        </a>
+    </div>
+</body>
+</html>

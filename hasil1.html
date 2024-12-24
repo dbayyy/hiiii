@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Kedua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+         body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #a8edea, #fed6e3); /* Pastel biru dan merah muda */
+            color: #333; /* Warna teks yang lebih gelap untuk kontras */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* Agar halaman bisa discroll */
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            opacity: 0; /* Mulai dari transparan */
+            transform: translateY(50px); /* Mulai dari bawah */
+            animation: slideUp 1s forwards; /* Tambahkan animasi slideUp */
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px); /* Mulai dari bawah */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Bergerak ke posisi normal */
+            }
+        }
+        .container h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .container img {
+            width: 100%;  /* Mengatur lebar gambar agar responsif */
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card .button {
+            padding: 10px 20px;
+            background-color: #3784b3; /* Warna ungu pastel */
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            outline: none;
+        }
+        .card .button:hover {
+            background-color: #a8edea; /* Warna pastel biru muda */
+            color: #333;
+        }
+
+        /* Responsif untuk tampilan kecil */
+        @media screen and (max-width: 600px) {
+            .container h1 {
+                font-size: 28px; /* Menyesuaikan ukuran judul di perangkat kecil */
+            }
+            .container p {
+                font-size: 16px; /* Menyesuaikan ukuran teks */
+            }
+            .container .button {
+                font-size: 14px; /* Mengurangi ukuran tombol */
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="sempurna.mp3" loop></audio>
+    <div class="container">
+        <h1>Aaaaa maaciw cantik</h1>
+        <img src="hasil1.jpg" alt="Thank You Image">
+        <p>makasi ya cantik udah mau sama aku,
+            semoga kita selalu bahagia ya,,
+            i love you...
+        </p>
+        <div class="card">
+            <a href="bunga.html">
+                <button class="button">bunga buat ayang</button>
+        </div>
+
+    </div>
+    <script>
+        const audio = document.getElementById("background-music");
+
+        // Simpan status audio di localStorage
+        audio.onplay = function() {
+            localStorage.setItem("isPlaying", "true");
+        };
+
+        audio.onpause = function() {
+            localStorage.setItem("isPlaying", "false");
+        };
+
+        audio.onended = function() {
+            localStorage.setItem("isPlaying", "false");
+            localStorage.removeItem("currentTime"); // Hapus waktu saat audio selesai
+        };
+
+        window.onload = function () {
+            const isPlaying = localStorage.getItem("isPlaying");
+            const currentTime = localStorage.getItem("currentTime");
+
+            if (isPlaying === "true") {
+                audio.currentTime = currentTime ? parseFloat(currentTime) : 0; // Set waktu saat ini
+                audio.play();
+            }
+
+            // Simpan waktu saat ini setiap detik
+            setInterval(() => {
+                if (!audio.paused) {
+                    localStorage.setItem("currentTime", audio.currentTime);
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
